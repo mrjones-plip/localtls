@@ -1,2 +1,3 @@
 dnslib==0.9.16
 cherrypy==18.1.2
+pyOpenSSL==21.0.0

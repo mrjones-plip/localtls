@@ -116,7 +116,7 @@ def run(port, index, certpath=''):
         cert = paths[confs.BASE_DOMAIN]
         cherrypy.tools.force_tls = cherrypy.Tool("before_handler", force_tls)
         cherrypy.config.update({
-            'server.ssl_module': 'builtin',
+            'server.ssl_module': 'pyopenssl',
             'server.ssl_certificate': os.path.join(cert, "cert.pem"),
             'server.ssl_private_key': os.path.join(cert, "privkey.pem"),
             'server.ssl_certificate_chain': os.path.join(cert, "fullchain.pem"),
