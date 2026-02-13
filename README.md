@@ -46,11 +46,17 @@ The second: you need not only a secure context for the browser, but actual safet
 
 ## Prerequisites 
 
-This was tested on Ubuntu 22.04, but any server that can run all of these should work:
+### Software
+This was tested on Ubuntu 24.04, but any server that can run all of these should work:
 
-* Python 3.6 or above (see `util/ubuntu2204-install.bash` script )
-* certbot and the dnslib and cherrypy PIPs (see `util/ubuntu2204-install.bash` script )
-* Static IP
+* Clone of this repo: `cd /root/; git clone https://github.com/mrjones-plip/localtls.git`
+* Python 3.6 or above: `apt update; apt install python3 python3-venv python3-pip`
+* Virtual Environment: `cd /root/localtls;python3 -m venv venv;source venv/bin/activate`
+* Install python packages: `pip3 install -r requirements.txt`
+
+### Networking & DNS
+
+* Static on the server IP
 * 4 DNS entries for your TLD or sub-domain (or sub sub domain etc.). In this example we'll use the `local-ip` sub-domain, the domain `example.com` and the IP `1.2.3.97`. All three values are arbitrary and can be what ever you'd like:  
     * A record: `local-ip.example.com` -> `1.2.3.97`
     * A record: `ns1.local-ip.example.com` -> `1.2.3.97`
